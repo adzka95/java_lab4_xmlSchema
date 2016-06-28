@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.cell.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="400.0" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lab4.Lab4">
+    <TableView fx:id="tabelka" prefHeight="400.0" prefWidth="400.0" editable="true">
+        <columns>
+            <TableColumn fx:id="nazwa" prefWidth="200.0" text="Nazwa" >
+                <cellValueFactory>
+                    <PropertyValueFactory property="nazwaPr"/> 
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn fx:id="cena" prefWidth="100.0" text="Cena" >
+                <cellValueFactory>
+                    <PropertyValueFactory property="cenaPr"/> 
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn fx:id="waluta" prefWidth="100.0" text="Waluta" >
+                <cellValueFactory>
+                    <PropertyValueFactory property="walutaPr"/> 
+                </cellValueFactory>
+            </TableColumn>
+        </columns>
+    </TableView>
+    
+      <TextField layoutX="10" layoutY="420"  fx:id="nowaNazwa" text="Nazwa" prefWidth="200.0"/>  
+      <TextField layoutX="220" layoutY="420"  fx:id="nowaCena" text="Cena" prefWidth="75.0"/>  
+      <TextField layoutX="305" layoutY="420"  fx:id="nowaWaluta" text="Waluta" prefWidth="75.0"/>   
+        
+      <Button layoutX="10" layoutY="450" id="dodaj" text="dodaj produkt" onAction="#dodajProdukt" />
+      <Button layoutX="10" layoutY="480" id="usun" text="usun produkt" onAction="#usunProdukt" />
+      <Button layoutX="102" layoutY="480" id="zaladuj" text="zaladuj" onAction="#zaladujProdukt" />
+      <Button layoutX="160" layoutY="480" id="zapisz" text="zapisz" onAction="#zapiszProdukt"/>
+      
+      <Label layoutX="10" layoutY="510" fx:id="komentarze" />
+</AnchorPane>

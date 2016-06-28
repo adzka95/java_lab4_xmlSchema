@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            targetNamespace="http://www.eti.pg.gda.pl/kask/pt/catalog"
+            xmlns:tns="http://www.eti.pg.gda.pl/kask/pt/catalog"
+            xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" jaxb:version="1.0"
+            elementFormDefault="qualified">
+    
+    <xsd:simpleType name="cena2">
+        <xsd:restriction base="xsd:decimal">
+            <xsd:minInclusive value="0"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    
+    <xsd:complexType name="rzecz">
+        <xsd:attribute name="nazwaPr" type="xsd:string" use="required"/>
+        <xsd:attribute name="cenaPr" type="tns:cena2" use="required"/>
+        <xsd:attribute name="walutaPr" type="xsd:string" use="required"/>
+    </xsd:complexType>
+    
+    <xsd:element name="catalog">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="rzecz" type="tns:rzecz" maxOccurs="unbounded"/>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+</xsd:schema>
